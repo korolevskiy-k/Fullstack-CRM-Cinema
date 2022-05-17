@@ -1,0 +1,20 @@
+.auth-block {
+    background-image: url(./back.jpg);
+    background-repeat: no-repeat no-repeat;
+    background-size: cover;    
+    background-position: center;
+}
+.block {
+    background-color:rgba(0,0,0,.3);
+    height:100%;
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+}
+.nav-wrapper {
+    z-index: 99999;
+    background-color: #89282F;
+}
+
+
