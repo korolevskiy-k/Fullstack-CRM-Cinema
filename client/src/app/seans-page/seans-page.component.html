@@ -1,1 +1,22 @@
-<p>seans-page works!</p>
+<div class="page-title">
+        <h4>Сеансы</h4>
+        <button class="waves-effect waves-light btn grey darken-1" routerLink="/seanses/new">Добавить сеанс</button>
+    </div>
+
+    <div class="row" *ngIf="seanses$ | async as seanses; else loader">
+        <div class="col s12">
+            <div class="collection" *ngIf="seanses.length !== 0; else empty">
+                <a *ngFor="let seans of seanses" [routerLink]="['/seanses', seans._id]" class="collection-item"> {{seans.name}}</a>                
+            </div>
+            <ng-template #empty>
+                <div class="center">
+                    На данный момент сеансов нет
+                </div>
+            </ng-template>
+        </div>
+    </div>
+
+<ng-template #loader>
+<app-loader></app-loader>
+</ng-template>
+

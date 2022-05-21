@@ -43,6 +43,15 @@ export interface OrderPosition {
     place?: number
 }
 
+export interface Seans {
+    _id?: string
+    name: string
+    date?: Date
+    seans?: number
+    user?: string
+    list: any[]
+}
+
 export interface Filter {
     start?: Date
     end?: Date
