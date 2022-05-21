@@ -7,6 +7,7 @@ const analyticsRoutes = require('./routes/analytics')
 const categoryRoutes = require('./routes/category')
 const orderRoutes = require('./routes/order')
 const positionRoutes = require('./routes/position')
+const seansRoutes = require('./routes/seans')
 const app = express()
 const keys = require('./config/keys')
 
@@ -28,5 +29,6 @@ app.use('/api/analytics', analyticsRoutes)
 app.use('/api/category', categoryRoutes)
 app.use('/api/order', orderRoutes)
 app.use('/api/position', positionRoutes)
+app.use('/api/seans', seansRoutes)
 
 module.exports = app
