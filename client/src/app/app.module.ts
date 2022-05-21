@@ -42,7 +42,7 @@ import { SeansPageComponent } from './seans-page/seans-page.component';
     OrderPositionsComponent,
     HistoryListComponent,
     HistoryFilterComponent,
-    SeansPageComponent,    
+    SeansPageComponent,   
   ],
   imports: [
     BrowserModule,

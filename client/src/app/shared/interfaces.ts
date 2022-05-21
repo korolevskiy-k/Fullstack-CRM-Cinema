@@ -49,7 +49,7 @@ export interface Seans {
     date?: Date
     seans?: number
     user?: string
-    list: any[]
+    list?: any[]
 }
 
 export interface Filter {
