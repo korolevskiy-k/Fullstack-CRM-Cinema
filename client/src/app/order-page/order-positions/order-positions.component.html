@@ -5,6 +5,8 @@
         <th>Название</th>
         <th>Стоимость</th>
         <th>Количество</th>
+        <th>Ряд</th>
+        <th>Место</th>
         <th></th>
     </tr>
     </thead>
@@ -16,6 +18,16 @@
         <td>
             <div class="input-field inline order-position-input">
                 <input type="number" value="1" min="1" [(ngModel)] = "position.quantity">
+            </div>
+        </td>
+        <td>
+            <div class="input-field inline order-position-input">
+                <input type="number" value="1" min="1" [(ngModel)] = "position.row">
+            </div>
+        </td>
+        <td>
+            <div class="input-field inline order-position-input">
+                <input type="number" value="1" min="1" [(ngModel)] = "position.place">
             </div>
         </td>
         <td>

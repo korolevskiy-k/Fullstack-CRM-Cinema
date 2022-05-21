@@ -13,16 +13,19 @@ export class OrderService {
             name: position.name,
             cost: position.cost,
             quantity: position.quantity,
-            _id: position._id
+            _id: position._id,
+            description: position.description,
+            row: position.row,
+            place: position.place
         })
 
-        const candidate = this.list.find(p => p._id === position._id)
-        if (candidate) {
-            // Изменение количества
-            candidate.quantity += orderPosition.quantity
-        } else {
+        // const candidate = this.list.find(p => p._id === position._id)
+        // if (candidate) {
+        //     // Изменение количества
+        //     candidate.quantity += orderPosition.quantity
+        // } else {
             this.list.push(orderPosition)
-        }
+        //}
         this.computePrice()
     }
 

@@ -19,8 +19,11 @@
             <thead>
             <tr>
                 <th>Название</th>
+                <th>Название</th>
                 <th>Количество</th>
                 <th>Цена</th>
+                <th>Ряд</th>
+                <th>Место</th>
                 <th></th>
             </tr>
             </thead>
@@ -28,8 +31,11 @@
             <tbody>
             <tr *ngFor="let item of order.list">
                 <td>{{item.name}}</td>
+                <td>{{item.description}}</td>
                 <td>{{item.quantity}}</td>
                 <td>{{item.cost}} руб</td>
+                <td>{{item.row}}</td>
+                <td>{{item.place}}</td>
                 <td><i class="material-icons pointer" (click)="removePosition(item)">delete</i></td>
             </tr>
             </tbody>

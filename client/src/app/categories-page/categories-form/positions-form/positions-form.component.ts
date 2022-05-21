@@ -25,7 +25,9 @@ export class PositionsFormComponent implements OnInit, AfterViewInit, OnDestroy 
   ngOnInit() {
     this.form = new FormGroup({
       name: new FormControl(null, Validators.required),
-      cost: new FormControl(null, [Validators.required, Validators.min(1)])
+      cost: new FormControl(null, [Validators.required, Validators.min(1)]),
+      description: new FormControl(null, Validators.required)
+      
     })
 
     this.loading = true
@@ -47,7 +49,8 @@ export class PositionsFormComponent implements OnInit, AfterViewInit, OnDestroy 
     this.positionId = position._id
     this.form.patchValue({
       name: position.name,
-      cost: position.cost
+      cost: position.cost,
+      description: position.description
     })
     this.modal.open()
     MaterialService.updateTextInputs()
@@ -73,6 +76,7 @@ export class PositionsFormComponent implements OnInit, AfterViewInit, OnDestroy 
       name: this.form.value.name,
       cost: this.form.value.cost,
       category: this.categoryId,
+      description: this.form.value.description
     }
 
     const completed = () => {

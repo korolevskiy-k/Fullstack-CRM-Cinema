@@ -18,6 +18,12 @@ const orderSchema = new Schema({
             },
             cost: {
                 type: Number
+            },
+            row: {
+                type: Number
+            },
+            place: {
+                type: Number
             }
         }
     ],

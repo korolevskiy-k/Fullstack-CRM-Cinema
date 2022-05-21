@@ -18,6 +18,9 @@ export interface Position {
     category: string
     _id?: string
     quantity?: number
+    description?: string
+    row?: number
+    place?: number
 }
 
 export interface Order {
@@ -26,6 +29,8 @@ export interface Order {
     user?: string
     list: any[]
     _id?: string
+    row?: number
+    place?: number
 }
 
 export interface OrderPosition {
@@ -33,6 +38,9 @@ export interface OrderPosition {
     cost: number
     quantity: number
     _id?: string
+    description?: string
+    row?: number
+    place?: number
 }
 
 export interface Filter {

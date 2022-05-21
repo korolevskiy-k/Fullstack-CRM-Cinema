@@ -41,6 +41,11 @@
                 <label for="pos-cost">Цена</label>
                 <span *ngIf="form.get('cost')?.invalid && form.get('cost')?.touched" class="helper-text red-text">Введите корректную цену. Минимальное значение 1</span>
             </div>
+            <div class="input-field">
+                <input formControlName="description" id="pos-description" type="text" [ngClass]="{'invalid': form.get('description')?.invalid && form.get('description')?.touched}">
+                <label for="pos-description">Цена</label>
+                <span *ngIf="form.get('description')?.invalid && form.get('description')?.touched" class="helper-text red-text">Поле не может быть пустым</span>
+            </div>
         </div>
         <div class="modal-footer">
             <button type="button" (click)="onCancel()" class="modal-action waves-effect waves-black btn-flat" [disabled]="form.disabled">Отмена</button>

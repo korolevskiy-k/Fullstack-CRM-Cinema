@@ -13,6 +13,9 @@ const positionSchema = new Schema({
     },
     user: {
         ref: 'users', type: Schema.Types.ObjectId
+    },
+    description: {
+        type: String
     }
 
 })

@@ -28,6 +28,8 @@ export class OrderPositionsComponent implements OnInit {
         (positions: Position[]) => {
           return positions.map(position => {
             position.quantity = 1
+            position.row = 1
+            position.place = 1
             return position
           })
         }
