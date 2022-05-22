@@ -24,7 +24,7 @@
                 <th>Цена</th>
                 <th>Ряд</th>
                 <th>Место</th>
-                <th></th>
+                <th>Сеанс</th>
             </tr>
             </thead>
 
@@ -36,6 +36,11 @@
                 <td>{{item.cost}} руб</td>
                 <td>{{item.row}}</td>
                 <td>{{item.place}}</td>
+                <td>
+                    <div class="input-field inline order-position-input">
+                        <input type="datetime-local">
+                    </div>
+                </td> 
                 <td><i class="material-icons pointer" (click)="removePosition(item)">delete</i></td>
             </tr>
             </tbody>

@@ -43,7 +43,7 @@
             </div>
             <div class="input-field">
                 <input formControlName="description" id="pos-description" type="text" [ngClass]="{'invalid': form.get('description')?.invalid && form.get('description')?.touched}">
-                <label for="pos-description">Цена</label>
+                <label for="pos-description">Описание</label>
                 <span *ngIf="form.get('description')?.invalid && form.get('description')?.touched" class="helper-text red-text">Поле не может быть пустым</span>
             </div>
         </div>
