@@ -14,7 +14,9 @@ module.exports.login = async function(req, res) {
             // Генерация токена - пароли совпали
             const token = jwt.sign({
                 email: candidate.email,
-                userId: candidate._id
+                userId: candidate._id,
+                // name: candidate.name,
+                // post: candidate.post
             }, keys.jwt, {expiresIn: 60 * 60})
 
             res.status(200).json({
@@ -48,7 +50,10 @@ module.exports.register = async function(req, res) {
         const password = req.body.password
         const user = new User({
             email: req.body.email,
-            password: bcrypt.hashSync(password, salt) // Защищенный пароль
+            password: bcrypt.hashSync(password, salt), // Защищенный пароль
+            name: req.body.name,
+            post: req.body.post
+
         })
         try {
             await user.save()

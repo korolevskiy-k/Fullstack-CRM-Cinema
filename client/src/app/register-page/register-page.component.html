@@ -22,6 +22,25 @@
                 > Поле не должно быть пустым
             </span>
         </div>
+        
+        <div class="input-field">
+            <input formControlName="name" id="name" type="text" [ngClass]="{'invalid': form.get('name')?.invalid && form.get('name')?.touched}">
+            <label for="name">ФИО:</label>
+            <span  
+                class="helper-text red-text" 
+                *ngIf="form.get('name')?.invalid && form.get('name')?.touched"
+                > Поле не должно быть пустым
+            </span>
+        </div>
+        <div class="input-field">
+            <input formControlName="post" id="post" type="text" [ngClass]="{'invalid': form.get('post')?.invalid && form.get('post')?.touched}">
+            <label for="post">Должность:</label>
+            <span  
+                class="helper-text red-text" 
+                *ngIf="form.get('post')?.invalid && form.get('post')?.touched"
+                > Поле не должно быть пустым
+            </span>
+        </div>
     </div>
     <div class="card-action">
         <button type="submit" class="modal-action btn waves-effect" [disabled]="form.invalid || form.disabled">Создать аккаунт</button>

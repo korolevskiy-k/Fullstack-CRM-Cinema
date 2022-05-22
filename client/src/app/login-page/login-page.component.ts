@@ -4,6 +4,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import {MaterialService} from '../shared/classes/material.service'
 import { Subscription } from 'rxjs';
 import { AuthService } from '../shared/services/auth.service';
+import { RegisterPageComponent } from '../register-page/register-page.component';
 
 @Component({
   selector: 'app-login-page',
@@ -22,7 +23,8 @@ export class LoginPageComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.form = new FormGroup({
       email: new FormControl(null, [Validators.email]),
-      password: new FormControl(null, [Validators.minLength(6), Validators.required])
+      password: new FormControl(null, [Validators.minLength(6), Validators.required]),
+      name: new FormControl(null)
     })
 
     this.route.queryParams.subscribe( (params: Params) => {
@@ -39,6 +41,8 @@ export class LoginPageComponent implements OnInit, OnDestroy {
 
   get password() { return this.form.get('password'); }
 
+
+
   ngOnDestroy(): void {
     if (this.aSub) {
       this.aSub.unsubscribe()
@@ -48,7 +52,10 @@ export class LoginPageComponent implements OnInit, OnDestroy {
   onSubmit() {
     this.form.disable()
     this.aSub = this.auth.login(this.form.value).subscribe(
-      () => this.router.navigate(['/overview']),
+      () => {
+      MaterialService.toast(`Здравствуй! ${this.form.value.email}`),
+      this.router.navigate(['/overview'])
+      },
       error => {
         MaterialService.toast(error.error.message)
         console.warn(error)
