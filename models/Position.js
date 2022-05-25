@@ -16,6 +16,9 @@ const positionSchema = new Schema({
     },
     description: {
         type: String
+    },
+    time: {
+        type: Number, required: true
     }
 
 })

@@ -22,7 +22,8 @@ module.exports.create = async function(req, res) {
             cost: req.body.cost,
             category: req.body.category,
             user: req.user.id,
-            description: req.user.description
+            description: req.user.description,
+            time: req.user.time
         }).save()
         res.status(201).json(position)
     } catch (e) {

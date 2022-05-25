@@ -20,7 +20,8 @@ export interface Position {
     quantity?: number
     description?: string
     row?: number
-    place?: number
+    place?: number,
+    time: number
 }
 
 export interface Order {

@@ -26,8 +26,9 @@ export class PositionsFormComponent implements OnInit, AfterViewInit, OnDestroy 
     this.form = new FormGroup({
       name: new FormControl(null, Validators.required),
       cost: new FormControl(null, [Validators.required, Validators.min(1)]),
-      description: new FormControl(null, Validators.required)
-      
+      description: new FormControl(null, Validators.required),
+      time: new FormControl(null, Validators.required)
+
     })
 
     this.loading = true
@@ -50,7 +51,8 @@ export class PositionsFormComponent implements OnInit, AfterViewInit, OnDestroy 
     this.form.patchValue({
       name: position.name,
       cost: position.cost,
-      description: position.description
+      description: position.description,
+      time: position.time
     })
     this.modal.open()
     MaterialService.updateTextInputs()
@@ -76,7 +78,8 @@ export class PositionsFormComponent implements OnInit, AfterViewInit, OnDestroy 
       name: this.form.value.name,
       cost: this.form.value.cost,
       category: this.categoryId,
-      description: this.form.value.description
+      description: this.form.value.description,
+      time: this.form.value.time
     }
 
     const completed = () => {
@@ -92,7 +95,7 @@ export class PositionsFormComponent implements OnInit, AfterViewInit, OnDestroy 
           const idx = this.positions.findIndex(P => P._id === position._id)
           this.positions[idx] = position
           MaterialService.toast('Изменения сохранены')
-        }, error => 
+        }, error =>
           MaterialService.toast(error.error.message),
         completed
         )
@@ -102,7 +105,7 @@ export class PositionsFormComponent implements OnInit, AfterViewInit, OnDestroy 
         position => {
           MaterialService.toast('Позиция создана')
           this.positions.push(position)
-        }, error => MaterialService.toast(error.error.message),        
+        }, error => MaterialService.toast(error.error.message),
         completed
       )
   }

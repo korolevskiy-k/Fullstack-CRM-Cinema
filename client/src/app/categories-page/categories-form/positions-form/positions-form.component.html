@@ -20,11 +20,11 @@
                 </a>
             </div>
             <ng-template #empty> <div class="center">В категории позиций нет</div></ng-template>
-        </div>  
+        </div>
         <ng-template #loader>
             <app-loader></app-loader>
-        </ng-template>      
-    </div>    
+        </ng-template>
+    </div>
 </div>
 
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
@@ -41,6 +41,11 @@
                 <label for="pos-cost">Цена</label>
                 <span *ngIf="form.get('cost')?.invalid && form.get('cost')?.touched" class="helper-text red-text">Введите корректную цену. Минимальное значение 1</span>
             </div>
+            <div class="input-field">
+              <input formControlName="time" id="pos-time" type="number" [ngClass]="{'invalid': form.get('time')?.invalid && form.get('time')?.touched}">
+              <label for="pos-time">Длительность</label>
+              <span *ngIf="form.get('time')?.invalid && form.get('time')?.touched" class="helper-text red-text">Введите корректную Длительность.</span>
+          </div>
             <div class="input-field">
                 <input formControlName="description" id="pos-description" type="text" [ngClass]="{'invalid': form.get('description')?.invalid && form.get('description')?.touched}">
                 <label for="pos-description">Описание</label>
