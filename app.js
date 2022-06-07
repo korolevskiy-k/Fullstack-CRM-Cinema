@@ -32,3 +32,6 @@ app.use('/api/position', positionRoutes)
 // app.use('/api/seans', seansRoutes)
 
 module.exports = app
+
+
+
